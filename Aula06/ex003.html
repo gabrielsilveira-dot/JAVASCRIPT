@@ -13,7 +13,7 @@
         body {
             width: 70vw;
             height: 50vh;
-            background-color: white;
+            background-color: rgb(155, 74, 209);
             margin: 0 auto;
         }
 
@@ -32,9 +32,16 @@
         <p>Me livrei da maldição novamente</p>
 
         <script>
-           
+            // '+' serva para adição e concatenação
+            // (number + number) para adição
+            // (string + string) para concatenação
+            var n1 = Number.parseInt(window.prompt('Digite um numero')) // força numero inteiro
+            var n2 = Number.parseInt(window.prompt('digite outro numero')) // força numero real
+            var s = n1 + n2
+            window.alert(`A soma entre ${n1} e ${n2} é igual a ${s}`)
+            //Pode colocar apenas "Number" ex: var n1 = Number(window.prompt('Digite um numero:'))
         </script>
     </header>
 </body>
 
-</html>
+</html>4
