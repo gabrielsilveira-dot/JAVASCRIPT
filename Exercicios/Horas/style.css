@@ -1,0 +1,52 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(231, 188, 131);
+    width: 100vw;
+    height: 100vh;
+}
+
+h1{
+    text-align: center;
+    margin: 4rem;
+    font-size: 60px;
+    color: white;
+}
+
+p{
+    font-size: 30px;
+    color: white;
+
+}
+
+.conteiner{
+    background-color: rgba(2, 0, 0, 0.623);
+    width: 60%;
+    border-radius: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    height: 40%;
+    
+}
+
+img{
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+
+}
+.autor{
+    font: 20px arial;
+    color: white;
+    margin-top: 10px;
+}
