@@ -9,7 +9,7 @@
   <body>
     <h1>Verificador de idade</h1>
     <div class="conteiner">
-      Ano de nascimento: <input type="date" id="datadenascimento" />
+      <h2>Ano de nascimento:</h2> <input type="number" max="4" id="datadenascimento" />
       <div id="inputradio">
         Sexo:
         <input type="radio" id="masculino" name="sexo" value="masculino" />
@@ -17,9 +17,9 @@
         <input type="radio" name="sexo" id="feminino" value="feminino" />
         <label for="feminino">Feminino</label>
       </div>
-      <input type="submit" value="Verificar idade" />
+      <input class="button" type="submit" value="Verificar idade" onclick="verificar()"/>
       <p id="resultado">Preencha os dados acima para verificar o resultado!</p>
-      <img id="imagem" src="" alt="">
+      <img id="imagem" src="" alt="">   
     </div>
     <script src="script.js"></script>
   </body>
