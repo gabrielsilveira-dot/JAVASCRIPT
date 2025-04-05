@@ -10,23 +10,15 @@
 // }
 // }
 
-
-
-
 // Exercício 2:
 // Crie uma função chamada ehVazio que receba uma string e retorne true se ela estiver vazia ou false caso tenha conteúdo.
 
 // Dica: use .length ou !valor.
 
-
 // function ehVazio(texto) {
 // return texto.length === 0;
 // }
 // console.log(ehVazio('agora'))
-
-
-
-
 
 // Exercício 3:
 // Crie uma função chamada formatarNome que receba uma string com o nome e retorne ela toda em maiúsculas, usando .toUpperCase().
@@ -36,11 +28,7 @@
 // }
 // console.log(formatarNome(maria))
 
-
-
-
-
-//  Exercício 4: 
+//  Exercício 4:
 // Crie uma função chamada ehMaiorDeIdade que receba uma idade e retorne true se for 18 ou mais, ou false se for menor de 18.
 
 // Usar return direto com a condição.
@@ -54,16 +42,10 @@
 // }
 // console.log(ehMaiorDeIdade(25)); // "maior de idade"
 
-
 // function ehMaiorDeIdade(idade) {
 //   return idade >= 18;
 // }
 // console.log(ehMaiorDeIdade(45)); // true
-
-
-
-
-
 
 // Exercício 5:
 // Crie uma função chamada calcularMedia que receba dois números como parâmetros e retorne a média aritmética entre eles.
@@ -76,10 +58,6 @@
 // }
 
 // console.log(calcularMedia(2, 8)); // saída: 5
-
-
-
-
 
 // Exercício 6:
 // Crie uma função chamada mensagemStatus que receba uma nota (0 a 10) e use o operador ternário para retornar:
@@ -104,12 +82,6 @@
 // }
 // console.log(mensagemStatus(8)); // Aprovado
 
-
-
-
-
-
-
 // Exercício 7:
 // Crie uma função chamada formatoMoeda que receba um número e retorne ele formatado como moeda brasileira, usando .toLocaleString('pt-br', { style: 'currency', currency: 'BRL' }).
 
@@ -118,12 +90,6 @@
 // }
 
 // console.log(formatoMoeda(200)); // R$ 200,00
-
-
-
-
-
-
 
 // Exercício 8:
 // Crie uma função chamada verificarInput que receba uma string e retorne true se ela estiver vazia ou false se tiver conteúdo.
@@ -135,12 +101,6 @@
 
 // console.log(verificarInput(""));     // true (está vazio)
 // console.log(verificarInput("abc"));  // false (tem conteúdo)
-
-
-
-
-
-
 
 // Exercício 9:
 // Crie uma função chamada verificarParOuImpar que receba um número e retorne:
@@ -154,13 +114,6 @@
 // }
 
 // console.log(verificarParOuImpar(7)); // Ímpar
-
-
-
-
-
-
-
 
 // Exercício 10:
 // Crie uma função chamada mostrarResultadoFinal que receba uma nota como parâmetro.
@@ -183,11 +136,6 @@
 
 // console.log(mostrarResultadoFinal(9)); // Aprovado
 
-
-
-
-
-
 // Exercício 11 (nova rodada):
 // Crie uma função chamada calcularPorcentagem que receba dois números:
 
@@ -202,11 +150,6 @@
 // }
 
 // console.log(calcularPorcentagem(200, 10)); // 20
-
-
-
-
-
 
 // Exercício 12:
 // Crie uma função chamada gritarTexto que receba uma string e retorne ela toda em maiúsculas.
@@ -225,11 +168,6 @@
 // console.log(gritarTexto('auuuuuuuuu'))
 // console.log(gritarTexto(''))
 
-
-
-
-
-
 // Exercício 13:
 // Crie uma função chamada tipoDoValor que receba qualquer valor como parâmetro e retorne uma string com o tipo do valor, usando typeof.
 
@@ -237,12 +175,6 @@
 //   return typeof valor1
 // }
 // console.log(tipoDoValor(false))
-
-
-
-
-
-
 
 // Exercício 14:
 // Crie uma função chamada classificarIdade que receba uma idade e retorne:
@@ -266,11 +198,6 @@
 // }
 // console.log(classificarIdade(18))
 
-
-
-
-
-
 // Exercício 15:
 // Crie uma função chamada arredondarParaCima que receba um número decimal e retorne ele arredondado para cima, usando Math.ceil().
 
@@ -278,12 +205,6 @@
 //   return Math.ceil(decimal)
 // }
 // console.log(arredondarParaCima(5.1))
-
-
-
-
-
-
 
 // Exercício 16:
 // Crie uma função chamada formatarComDuasCasas que receba um número e retorne ele com duas casas decimais fixas, usando .toFixed(2).
@@ -293,13 +214,6 @@
 // }
 // console.log(formatarComDuasCasas(87.1));
 
-
-
-
-
-
-
-
 // Exercício 17:
 // Crie uma função chamada somarComoMoeda que receba dois números, some os dois, e retorne o resultado formatado como moeda brasileira.
 
@@ -307,12 +221,6 @@
 //   return (n1 + n2).toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })
 // }
 // console.log(somarComoMoeda(25, 50))
-
-
-
-
-
-
 
 // Exercício 18:
 // Crie uma função chamada quantidadeDeLetras que receba um texto como parâmetro e retorne o número de caracteres que ele possui.
@@ -324,29 +232,14 @@
 // }
 // console.log(quantidadeDeLetras('Otorrinolaringologista'))
 
-
-
-
-
-
-
-
 // Exercício 19:
 // Crie uma função chamada saoIguais que receba dois valores e retorne true se forem estritamente iguais (===), ou false caso contrário.
 
 // function saoIguais (v1, v2){
-//   return v1 === v2 
+//   return v1 === v2
 // }
 // console.log(saoIguais(5, 5))
 // console.log(saoIguais(1000, '1000'))
-
-
-
-
-
-
-
-
 
 // Exercício 20:
 // Crie uma função chamada exibirSaudacao que receba um nome e retorne a seguinte mensagem usando template string:
@@ -360,23 +253,15 @@
 // }
 // console.log(exibirSaudacao('Gabriel'))
 
-
-
-
 // Exercício 21 (Revisão):
 // Crie uma função chamada dobroDoNumero que receba um número como parâmetro e retorne o dobro dele.
 
 // function dobroDoNumero(numero) {
 //   return numero * 2;
-// } 
+// }
 
 // console.log(dobroDoNumero(5)); // 10
 // console.log(dobroDoNumero(10)); // 20
-
-
-
-
-
 
 // Exercício 22 (Revisão):
 // Crie uma função chamada nomeCompleto que receba dois parâmetros: nome e sobrenome.
@@ -384,14 +269,9 @@
 
 // function nomeCompleto(nome, sobrenome) {
 //   return `${nome} ${sobrenome}`;
-// }   
+// }
 // console.log(nomeCompleto("Gabriel", "Lima")); // Gabriel Lima
 // console.log(nomeCompleto("Maria", "Silva")); // Maria Silva
-
-
-
-
-
 
 // Exercício 23 (Revisão):
 // Crie uma função chamada estaEntreZeroEDez que receba um número e retorne true se ele estiver entre 0 e 10 (inclusive), ou false se não estiver.
@@ -402,10 +282,6 @@
 // console.log(estaEntreZeroEDez(5)); // true
 // console.log(estaEntreZeroEDez(15)); // false
 
-
-
-
-
 // Exercício 24 (Revisão):
 // Crie uma função chamada mostrarTipo que receba um valor qualquer e retorne o tipo desse valor usando typeof.
 
@@ -413,15 +289,9 @@
 //   return typeof valor;
 // }
 // console.log(mostrarTipo(5)); // number
-// console.log(mostrarTipo("Olá")); // string  
+// console.log(mostrarTipo("Olá")); // string
 // console.log(mostrarTipo(true)); // boolean
 // console.log(mostrarTipo({})); // object
-
-
-
-
-
-
 
 // Exercício 25 (Revisão):
 // Crie uma função chamada verificarPar que receba um número e retorne:
@@ -431,7 +301,6 @@
 // "Ímpar" se for ímpar
 
 // Use o operador % e return com if.
-
 
 // function verificarPar(numero) {
 //   if (numero % 2 === 0) {
@@ -446,3 +315,39 @@
 // function verificarPar(numero) {
 //   return numero % 2 === 0 ? "Par" : "Ímpar";
 // }
+
+// while
+
+// let numero = 1;
+// while (numero <= 5) {
+//     console.log(`Passo ${numero}`);
+//     numero++;
+// }
+
+// Exercício com while:
+// Crie um laço while que mostre no console os números pares de 2 até 10 (inclusive o 10).
+
+// let numero = 2;
+// while (numero <= 10) {
+//     console.log(numero);
+//     numero += 2; // Incrementa 2 para ir para o próximo número par
+// }
+
+// let numero = 1
+// do {
+//     console.log(numero)
+//     numero++
+// }while (numero <= 3)
+
+let senha;
+let tentativas = 0;
+
+do {
+  senha = prompt("Digite sua senha:");
+  tentativas++;
+
+  if (tentativas >= 3 && senha !== "roblox") {
+    alert("Dica de senha: Jogo que vc mais joga.");
+  }
+} while (senha !== "roblox");
+alert("Acesso liberado!");

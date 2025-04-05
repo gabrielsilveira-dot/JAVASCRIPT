@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Interação com o Mouse - Parallax</title>
+  <style>
+    html, body {
+      margin: 0;
+      height: 100%;
+      overflow: hidden;
+      background: #000;
+    }
+
+    .camada {
+      position: absolute;
+      width: 120%;
+      height: 120%;
+      top: -10%;
+      left: -10%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      pointer-events: none;
+      will-change: transform;
+    }
+
+    .layer1 {
+      background: radial-gradient(circle at 30% 30%, #222 0%, transparent 70%);
+      z-index: 1;
+    }
+
+    .layer2 {
+      background: radial-gradient(circle at 70% 70%, #333 0%, transparent 60%);
+      z-index: 2;
+    }
+
+    .layer3 {
+      background: radial-gradient(circle at 50% 50%, #444 0%, transparent 50%);
+      z-index: 3;
+    }
+
+    .luz {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 80%);
+      border-radius: 50%;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      mix-blend-mode: screen;
+      z-index: 10;
+    }
+  </style>
+</head>
+<body>
+  <div class="camada layer1"></div>
+  <div class="camada layer2"></div>
+  <div class="camada layer3"></div>
+  <div class="luz" id="luz"></div>
+
+  <script>
+    const layers = document.querySelectorAll('.camada');
+    const luz = document.getElementById('luz');
+
+    document.addEventListener('mousemove', e => {
+      const x = (e.clientX / window.innerWidth - 0.5) * 2;
+      const y = (e.clientY / window.innerHeight - 0.5) * 2;
+
+      layers.forEach((layer, i) => {
+        const depth = (i + 1) * 10;
+        layer.style.transform = `translate(${x * depth}px, ${y * depth}px)`;
+      });
+
+      luz.style.left = `${e.clientX}px`;
+      luz.style.top = `${e.clientY}px`;
+    });
+  </script>
+</body>
+</html>

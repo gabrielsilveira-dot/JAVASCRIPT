@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Turbulência SVG</title>
+  <style>
+    html, body {
+      margin: 0;
+      height: 100%;
+      background: #111;
+      overflow: hidden;
+    }
+    .liquido {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      filter: url(#turbulence);
+    }
+    svg {
+      position: absolute;
+      width: 0;
+      height: 0;
+    }
+    .texto {
+      position: relative;
+      z-index: 1;
+      color: white;
+      font-family: sans-serif;
+      text-align: center;
+      padding-top: 20vh;
+    }
+  </style>
+</head>
+<body>
+  <svg>
+    <filter id="turbulence">
+      <feTurbulence type="turbulence" baseFrequency="0.01" numOctaves="2" result="turbulence"/>
+      <feDisplacementMap in2="turbulence" in="SourceGraphic" scale="20" xChannelSelector="R" yChannelSelector="G"/>
+      <animate xlink:href="#turbulence" attributeName="baseFrequency" dur="20s" values="0.01;0.015;0.01" repeatCount="indefinite"/>
+    </filter>
+  </svg>
+
+  <div class="liquido"></div>
+  <div class="texto">
+    <h1>Efeito Vidro Líquido</h1>
+    <p>Distorção sutil com SVG animado para fundo futurista.</p>
+  </div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Distorção no Cursor</title>
+  <style>
+    html, body {
+      margin: 0;
+      height: 100%;
+      overflow: hidden;
+      background: url('https://picsum.photos/1920/1080?grayscale') no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    .distorcao {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      backdrop-filter: blur(3px);
+      -webkit-backdrop-filter: blur(3px);
+      transform: translate(-30%, -30%);
+      pointer-events: none;
+      z-index: 2;
+    }
+  </style>
+</head>
+<body>
+  <div class="distorcao" id="distorcao"></div>
+
+  <script>
+    const lente = document.getElementById('distorcao');
+    document.addEventListener('mousemove', e => {
+      lente.style.left = e.clientX + 'px';
+      lente.style.top = e.clientY + 'px';
+    });
+  </script>
+</body>
+</html>

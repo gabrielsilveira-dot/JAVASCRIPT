@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Ruído Digital Sutil</title>
+  <style>
+    body {
+      margin: 0;
+      background: black;
+      overflow: hidden;
+    }
+    canvas {
+      display: block;
+      width: 100vw;
+      height: 100vh;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="bg"></canvas>
+  <script>
+    const canvas = document.getElementById('bg');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    function gerarRuido() {
+      const imageData = ctx.createImageData(canvas.width, canvas.height);
+      const buffer = new Uint32Array(imageData.data.buffer);
+
+      for (let i = 0; i < buffer.length; i += 50) {
+        if (Math.random() > 0.95) {
+          const cinza = Math.floor(Math.random() * 55 + 50);
+          buffer[i] = (255 << 24) | (cinza << 16) | (cinza << 8) | cinza;
+        }
+      }
+
+      ctx.putImageData(imageData, 0, 0);
+    }
+
+    function loop() {
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.2)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      gerarRuido();
+      requestAnimationFrame(loop);
+    }
+
+    loop();
+  </script>
+</body>
+</html>

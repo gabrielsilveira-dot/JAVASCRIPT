@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Estrelas Suaves</title>
+  <style>
+    body {
+      margin: 0;
+      background: black;
+      overflow: hidden;
+    }
+    canvas {
+      display: block;
+      width: 100vw;
+      height: 100vh;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="bg"></canvas>
+  <script>
+    const canvas = document.getElementById('bg');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const estrelas = Array.from({ length: 200 }, () => ({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      r: Math.random() * 1.5,
+      alpha: 0.1 + Math.random() * 0.2,
+      dy: 0.05 + Math.random() * 0.05
+    }));
+
+    function desenhar() {
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.2)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      estrelas.forEach(e => {
+        ctx.beginPath();
+        ctx.arc(e.x, e.y, e.r, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(255, 255, 255, ${e.alpha})`;
+        ctx.fill();
+
+        e.y += e.dy;
+        if (e.y > canvas.height) {
+          e.y = -e.r;
+          e.x = Math.random() * canvas.width;
+        }
+      });
+
+      requestAnimationFrame(desenhar);
+    }
+
+    desenhar();
+  </script>
+</body>
+</html>

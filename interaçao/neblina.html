@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Neblina Digital</title>
+  <style>
+    body {
+      margin: 0;
+      background: black;
+      overflow: hidden;
+    }
+    canvas {
+      display: block;
+      width: 100vw;
+      height: 100vh;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="bg"></canvas>
+  <script>
+    const canvas = document.getElementById('bg');
+    const ctx = canvas.getContext('2d');
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const camadas = Array.from({ length: 3 }, (_, i) => ({
+      pontos: Array.from({ length: 30 }, () => ({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        r: 200 + Math.random() * 200,
+        dx: (Math.random() - 0.5) * 0.05 * (i + 1),
+        dy: (Math.random() - 0.5) * 0.05 * (i + 1),
+        a: 0.02 + Math.random() * 0.015
+      })),
+      cor: `rgba(${30 + i * 10}, ${30 + i * 10}, ${30 + i * 10},` // camada levemente mais clara
+    }));
+
+    function desenhar() {
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      camadas.forEach(layer => {
+        layer.pontos.forEach(p => {
+          const grad = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.r);
+          grad.addColorStop(0, `${layer.cor} ${p.a})`);
+          grad.addColorStop(1, 'rgba(0,0,0,0)');
+          ctx.fillStyle = grad;
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          ctx.fill();
+
+          p.x += p.dx;
+          p.y += p.dy;
+
+          if (p.x < -p.r || p.x > canvas.width + p.r) p.dx *= -1;
+          if (p.y < -p.r || p.y > canvas.height + p.r) p.dy *= -1;
+        });
+      });
+
+      requestAnimationFrame(desenhar);
+    }
+
+    desenhar();
+  </script>
+</body>
+</html>
